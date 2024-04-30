@@ -94,3 +94,52 @@ $ SELECT * FROM all_heroes LIMIT 10;
 
 ### Hero Stats
 SELECT * FROM hero_stats WHERE niche_hero = TRUE;
+
+# Configuração do PostgreSQL com Docker
+
+Este README fornece instruções sobre como configurar um ambiente PostgreSQL usando Docker e como preparar e importar datasets para análise.
+
+## Pré-requisitos
+
+- Docker instalado em sua máquina.
+- Datasets preparados no formato CSV.
+
+## Passo a Passo
+
+### 1. Baixar a Imagem do PostgreSQL
+
+Para baixar a imagem oficial do PostgreSQL do Docker Hub, execute o seguinte comando no terminal:
+docker pull postgres
+
+### 2. Iniciar o Container do PostgreSQL
+
+Execute o container do PostgreSQL com o nome conexaodbpg e senha configurada:
+docker run --name conexaodbpg -e POSTGRES_PASSWORD=123 -d -p 5432:5432 postgres
+
+### 3. Preparação dos Dados
+
+Antes de copiar os dados, certifique-se de que estão no formato CSV e que a estrutura (nomes de colunas, tipos de dados) é conhecida.
+
+### 4. Copiar o Dataset para o Container
+
+Substitua <caminho_do_seu_pc> pelo caminho onde seu arquivo CSV está localizado.
+
+- Todos os Heróis:
+docker cp <caminho_do_seu_pc>/all_heroes.csv conexaodbpg:/var/lib/postgresql/data/all_heroes.csv
+
+- Estatísticas dos Heróis:
+docker cp <caminho_do_seu_pc>/stats_heroes.csv conexaodbpg:/var/lib/postgresql/data/stats_heroes.csv
+
+### 5. Acessar o PostgreSQL via PSQL
+
+Para acessar o shell do PostgreSQL dentro do container, utilize:
+docker exec -it conexaodbpg psql -U postgres
+
+### 6. Criar o Banco de Dados
+
+Dentro do PSQL, crie um banco de dados chamado dota:
+CREATE DATABASE dota;
+
+### 7. Conectar ao Banco de Dados
+
+\c dota;
