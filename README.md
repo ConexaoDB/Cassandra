@@ -30,7 +30,7 @@ Todos os Heróis
 $ docker cp <caminho_do_seu_pc>/All_Heroes_ID.csv conexaodb:/All_Heroes_ID.csv
 
 Metas Atuais
-docker cp <caminho_do_seu_pc>/Current_Pro_meta.csv conexaodb:/Current_Pro_meta.csv
+$ docker cp <caminho_do_seu_pc>/Current_Pro_meta.csv conexaodb:/Current_Pro_meta.csv
 
 ### 5. Acessar o Cassandra via CQLSH
 Para acessar o shell do Cassandra (CQLSH) dentro do container, utilize:
@@ -93,11 +93,9 @@ WITH HEADER = TRUE;
 $ SELECT * FROM all_heroes LIMIT 10;
 
 ### Hero Stats
-SELECT * FROM hero_stats WHERE niche_hero = TRUE;
+$ SELECT * FROM hero_stats WHERE niche_hero = TRUE;
 
 # Configuração do PostgreSQL com Docker
-
-Este README fornece instruções sobre como configurar um ambiente PostgreSQL usando Docker e como preparar e importar datasets para análise.
 
 ## Pré-requisitos
 
