@@ -1,33 +1,44 @@
-# Cassandra
+# Configuração do Cassandra com Docker
 
-## **Baixar e rodar a imagem do Cassandra**
+Este README fornece instruções sobre como configurar um ambiente Cassandra usando Docker e como preparar e importar datasets para análise.
 
-docker pull cassandra
+## Pré-requisitos
 
-## INICIAR DOCKER
+- Docker instalado em sua máquina
+- Datasets preparados no formato CSV
 
-docker run --name conexaodb -d cassandra:latest
+## Passo a Passo
 
+### 1. Baixar a imagem do Cassandra
 
-Certifique-se de que o seu dataset está no formato correto (CSV, por exemplo) e que você entende a estrutura dos dados (nomes de colunas, tipos de dados, etc.).
+Para baixar a imagem oficial do Cassandra do Docker Hub, execute o seguinte comando no terminal:
 
-## **Copiar o Dataset para o Contêiner**
+$ docker pull cassandra
 
-### Todos os Heros
+2. Iniciar o Container do Cassandra
+Execute o container do Cassandra com o nome conexaodb:
 
-docker cp /home/hitallo/Documents/cassandra/dota2metas/archive/All_Heroes_ID.csv conexaodb:/All_Heroes_ID.csv
+$ docker run --name conexaodb -d cassandra:latest
 
-docker cp C:\Users\Louise\Documents\hitallo\archive\All_Heroes_ID.csv  conexaodb:/All_Heroes_ID.csv
+3. Preparação dos Dados
+Antes de copiar os dados, certifique-se de que estão no formato CSV e que a estrutura (nomes de colunas, tipos de dados) é conhecida.
 
-### Metas
+4. Copiar o Dataset para o Container
+Substitua <caminho_do_seu_pc> pelo caminho onde seu arquivo CSV está localizado.
 
-docker cp /home/hitallo/Documents/cassandra/dota2metas/archive/Current_Pro_meta.csv conexaodb:/Current_Pro_meta.csv
+Todos os Heróis
+$ docker cp <caminho_do_seu_pc>/All_Heroes_ID.csv conexaodb:/All_Heroes_ID.csv
 
-## **Acessar o Cassandra via CQLSH**
+Metas Atuais
+docker cp <caminho_do_seu_pc>/Current_Pro_meta.csv conexaodb:/Current_Pro_meta.csv
 
-docker exec -it conexaodb cqlsh
+5. Acessar o Cassandra via CQLSH
+Para acessar o shell do Cassandra (CQLSH) dentro do container, utilize:
 
-## CRIAR A KEYSPACE(DATABASE)
+$ docker exec -it conexaodb cqlsh
 
-CREATE KEYSPACE IF NOT EXISTS dota WITH replication = {'class': 'SimpleStrategy', 'replication_factor': 1};
+6. Criar a Keyspace
+Dentro do CQLSH, crie uma keyspace chamada dota com a seguinte configuração de replicação:
+
+$ CREATE KEYSPACE IF NOT EXISTS dota WITH replication = {'class': 'SimpleStrategy', 'replication_factor' : 1};
 
