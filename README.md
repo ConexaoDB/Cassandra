@@ -46,4 +46,51 @@ $ CREATE KEYSPACE IF NOT EXISTS dota WITH replication = {'class': 'SimpleStrateg
 
 $ USE dota;
 
+### 8. Criar as Tabelas
 
+# Tabela de Heróis
+
+$ CREATE TABLE IF NOT EXISTS all_heroes (
+    id INT PRIMARY KEY,
+    name TEXT,
+    hero_id INT
+);
+
+# Tabela de Estatísticas dos Heróis
+
+$ CREATE TABLE IF NOT EXISTS hero_stats (
+    id INT PRIMARY KEY,
+    name TEXT,
+    primary_attribute TEXT,
+    attack_type TEXT,
+    attack_range INT,
+    roles TEXT,
+    total_pro_wins INT,
+    times_picked INT,
+    times_banned INT,
+    win_rate FLOAT,
+    niche_hero BOOLEAN
+);
+
+### 9. Carregar Dados:
+
+# Carregar Dados na Tabela de Heróis
+
+$ COPY all_heroes (id, name, hero_id)
+FROM '/All_Heroes_ID.csv'
+WITH HEADER = TRUE;
+
+# Carregar Dados na Tabela de Estatísticas dos Heróis
+
+$ COPY hero_stats (id, name, primary_attribute, attack_type, attack_range, roles, total_pro_wins, times_picked, times_banned, win_rate, niche_hero)
+FROM '/Current_Pro_meta.csv'
+WITH HEADER = TRUE;
+
+
+## Consulta de Dados Básicos
+
+#  All Heroes
+$ SELECT * FROM all_heroes LIMIT 10;
+
+# Hero Stats
+SELECT * FROM hero_stats WHERE niche_hero = TRUE;
