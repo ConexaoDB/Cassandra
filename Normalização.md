@@ -1,5 +1,5 @@
-#Importar arquivo CSV para o Docker:
-##Copie o arquivo CSV que deseja importar para o container do Docker onde o Cassandra está sendo executado. Você pode fazer isso usando o comando $ $ $ docker cp do terminal.
+# Importar arquivo CSV para o Docker:
+## Copie o arquivo CSV que deseja importar para o container do Docker onde o Cassandra está sendo executado. Você pode fazer isso usando o comando $ $ $ docker cp do terminal.
 
 $ docker cp hero_stats.csv conexaodb:/caminho/no/container/hero_stats.csv
 
