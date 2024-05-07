@@ -1,3 +1,9 @@
+
+# Normalização Min-Max: Também conhecida como escala min-max, essa técnica redimensiona os dados para um intervalo específico (por exemplo, entre 0 e 1). A fórmula básica é:
+
+![Fórmula de normalização](formula_normalizaocao.jpg)
+
+
 # Importar arquivo CSV para o Docker:
 ## Copie o arquivo CSV que deseja importar para o container do Docker onde o Cassandra está sendo executado. Você pode fazer isso usando o comando $ $ $ docker cp do terminal.
 
@@ -6,15 +12,14 @@ $ docker cp hero_stats.csv conexaodb:/caminho/no/container/hero_stats.csv
 # Entrar no container do Docker:
 ## Use o comando docker exec para entrar no container onde o Cassandra está sendo executado.
 
-$ docker exec -it NOME_DO_CONTAINER cqlsh
+$ docker exec -it conexaodb cqlsh
 
 # Criar um keyspace :
 ## Se você ainda não tiver um keyspace, pode criar um usando o seguinte comando:
-sql
 
 $ CREATE KEYSPACE IF NOT EXISTS dota WITH replication = {'class': 'SimpleStrategy', 'replication_factor': 1};
 # Usar o keyspace:
-## Use o keyspace que você acabou de criar (ou o que já existe) para as operações seguintes.
+## Use o keyspace que você acabou de criar para as operações seguintes.
 
 $ USE dota;
 # Criar a tabela:
