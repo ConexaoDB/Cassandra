@@ -1,11 +1,39 @@
 
-# Normalização Min-Max: Também conhecida como escala min-max, essa técnica redimensiona os dados para um intervalo específico (por exemplo, entre 0 e 1). A fórmula básica é:
+## Normalização Min-Max: Também conhecida como escala min-max, essa técnica redimensiona os dados para um intervalo específico (por exemplo, entre 0 e 1). A fórmula básica é:
 
 ![Fórmula de normalização](/formula_normalizacao.png)
 
+## Pata realizar a normalização estatística das colunas 'Total Pro wins', 'Times Picked', 'Times Banned' e 'Win Rate':
+### Importar bibliotecas:
 
-# Importar arquivo CSV para o Docker:
-## Copie o arquivo CSV que deseja importar para o container do Docker onde o Cassandra está sendo executado. Você pode fazer isso usando o comando $ $ $ docker cp do terminal.
+import pandas as pd
+
+# DataFrame de exemplo
+
+data = {
+    'Name': ['Abaddon', 'Alchemist', 'Ancient Apparition', 'Anti-Mage'],
+    'Total Pro wins': [8, 15, 20, 30],
+    'Times Picked': [24, 30, 25, 35],
+    'Times Banned': [61, 45, 50, 40],
+    'Win Rate': [33.33, 55.55, 66.66, 75.00]
+}
+df = pd.DataFrame(data)
+
+## Normalização estatística:
+
+Colunas a serem normalizadas
+cols_to_normalize = ['Total Pro wins', 'Times Picked', 'Times Banned', 'Win Rate']
+
+ Normalização min-max
+for col in cols_to_normalize:
+    df[col + '_normalized'] = (df[col] - df[col].min()) / (df[col].max() - df[col].min())
+
+# Exibir DataFrame resultante
+print(df)
+
+
+## Importar arquivo CSV para o Docker:
+### Copie o arquivo CSV que deseja importar para o container do Docker onde o Cassandra está sendo executado. Você pode fazer isso usando o comando $ $ $ docker cp do terminal.
 
 $ docker cp hero_stats.csv conexaodb:/caminho/no/container/hero_stats.csv
 
