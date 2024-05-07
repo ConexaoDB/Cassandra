@@ -10,26 +10,31 @@ import pandas as pd
 
 # DataFrame de exemplo
 
-data = {
-    'Name': ['Abaddon', 'Alchemist', 'Ancient Apparition', 'Anti-Mage'],
-    'Total Pro wins': [8, 15, 20, 30],
-    'Times Picked': [24, 30, 25, 35],
-    'Times Banned': [61, 45, 50, 40],
-    'Win Rate': [33.33, 55.55, 66.66, 75.00]
-}
+data = {<br/>
+    'Name': ['Abaddon', 'Alchemist', 'Ancient Apparition', 'Anti-Mage'],<br/>
+    'Total Pro wins': [8, 15, 20, 30],<br/>
+    'Times Picked': [24, 30, 25, 35],<br/>
+    'Times Banned': [61, 45, 50, 40],<br/>
+    'Win Rate': [33.33, 55.55, 66.66, 75.00]<br/>
+}<br/>
 df = pd.DataFrame(data)
 
 ## Normalização estatística:
 
-Colunas a serem normalizadas
-cols_to_normalize = ['Total Pro wins', 'Times Picked', 'Times Banned', 'Win Rate']
+Colunas a serem normalizadas<br/>
+cols_to_normalize = ['Total Pro wins', 'Times Picked', 'Times Banned', 'Win Rate']<br/>
 
- Normalização min-max
-for col in cols_to_normalize:
-    df[col + '_normalized'] = (df[col] - df[col].min()) / (df[col].max() - df[col].min())
+ Normalização min-max<br/>
+for col in cols_to_normalize:<br/>
+    df[col + '_normalized'] = (df[col] - df[col].min()) / (df[col].max() - df[col].min())<br/>
 
-# Exibir DataFrame resultante
+## Exibir DataFrame resultante
 print(df)
+
+## Salvar o DataFrame normalizado
+
+pro_meta = './pro_meta.csv'<br/>
+df.to_csv(pro_meta, index=False)<br/>
 
 
 ## Importar arquivo CSV para o Docker:
