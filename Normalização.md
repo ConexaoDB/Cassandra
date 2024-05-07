@@ -1,7 +1,7 @@
 
 # Normalização Min-Max: Também conhecida como escala min-max, essa técnica redimensiona os dados para um intervalo específico (por exemplo, entre 0 e 1). A fórmula básica é:
 
-![Fórmula de normalização](formula_normalizaocao.png)
+![Fórmula de normalização](/Cassandra/formula_normalizacao.png)
 
 
 # Importar arquivo CSV para o Docker:
