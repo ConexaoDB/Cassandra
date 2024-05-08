@@ -24,12 +24,12 @@ $ docker exec -it conexaodb cqlsh
 
 $ USE dota;
 
-$ CREATE TABLE IF NOT EXISTS roles_hero (
-    hero_id INT PRIMARY KEY,
-    roles TEXT
+$ CREATE TABLE IF NOT EXISTS role (
+    role_id INT PRIMARY KEY,
+    role TEXT
 );
 
 ## Copy o CSV para a tabela
 
-$ COPY roles_hero (hero_id, roles) FROM '/hero_id_roles.csv' WITH DELIMITER=',' AND HEADER=TRUE;
+$ COPY roles (hero_id, roles) FROM '/hero_id_roles.csv' WITH DELIMITER=',' AND HEADER=TRUE;
 

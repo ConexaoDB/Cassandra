@@ -1,0 +1,125 @@
+hero_id,name,primary_attribute,attack_type,attack_range
+1,Abaddon,all,Melee,150
+2,Alchemist,str,Melee,150
+3,Ancient Apparition,int,Ranged,675
+4,Anti-Mage,agi,Melee,150
+5,Arc Warden,agi,Ranged,625
+6,Axe,str,Melee,150
+7,Bane,all,Ranged,400
+8,Batrider,all,Ranged,400
+9,Beastmaster,all,Melee,150
+10,Bloodseeker,agi,Melee,150
+11,Bounty Hunter,agi,Melee,150
+12,Brewmaster,all,Melee,150
+13,Bristleback,str,Melee,150
+14,Broodmother,all,Melee,175
+15,Centaur Warrunner,str,Melee,150
+16,Chaos Knight,str,Melee,150
+17,Chen,all,Ranged,650
+18,Clinkz,agi,Ranged,600
+19,Clockwerk,all,Melee,150
+20,Crystal Maiden,int,Ranged,600
+21,Dark Seer,all,Melee,150
+22,Dark Willow,all,Ranged,475
+23,Dawnbreaker,str,Melee,150
+24,Dazzle,all,Ranged,575
+25,Death Prophet,int,Ranged,600
+26,Disruptor,int,Ranged,625
+27,Doom,str,Melee,200
+28,Dragon Knight,str,Melee,150
+29,Drow Ranger,agi,Ranged,625
+30,Earth Spirit,str,Melee,150
+31,Earthshaker,str,Melee,150
+32,Elder Titan,str,Melee,150
+33,Ember Spirit,agi,Melee,150
+34,Enchantress,int,Ranged,575
+35,Enigma,all,Ranged,500
+36,Faceless Void,agi,Melee,150
+37,Grimstroke,int,Ranged,600
+38,Gyrocopter,agi,Ranged,365
+39,Hoodwink,agi,Ranged,575
+40,Huskar,str,Ranged,400
+41,Invoker,all,Ranged,600
+42,Io,all,Ranged,500
+43,Jakiro,int,Ranged,400
+44,Juggernaut,agi,Melee,150
+45,Keeper of the Light,int,Ranged,600
+46,Kunkka,str,Melee,150
+47,Legion Commander,str,Melee,150
+48,Leshrac,int,Ranged,575
+49,Lich,int,Ranged,550
+50,Lifestealer,str,Melee,150
+51,Lina,int,Ranged,670
+52,Lion,int,Ranged,600
+53,Lone Druid,all,Ranged,550
+54,Luna,agi,Ranged,330
+55,Lycan,all,Melee,150
+56,Magnus,all,Melee,150
+57,Marci,all,Melee,150
+58,Mars,str,Melee,250
+59,Medusa,agi,Ranged,600
+60,Meepo,agi,Melee,150
+61,Mirana,all,Ranged,630
+62,Monkey King,agi,Melee,300
+63,Morphling,agi,Ranged,350
+64,Muerta,int,Ranged,575
+65,Naga Siren,agi,Melee,150
+66,Nature's Prophet,int,Ranged,620
+67,Necrophos,int,Ranged,500
+68,Night Stalker,str,Melee,150
+69,Nyx Assassin,all,Melee,150
+70,Ogre Magi,str,Melee,150
+71,Omniknight,str,Melee,150
+72,Oracle,int,Ranged,620
+73,Outworld Destroyer,int,Ranged,450
+74,Pangolier,all,Melee,150
+75,Phantom Assassin,agi,Melee,150
+76,Phantom Lancer,agi,Melee,225
+77,Phoenix,all,Ranged,525
+78,Primal Beast,str,Melee,150
+79,Puck,int,Ranged,550
+80,Pudge,str,Melee,175
+81,Pugna,int,Ranged,630
+82,Queen of Pain,int,Ranged,550
+83,Razor,agi,Ranged,475
+84,Riki,agi,Melee,150
+85,Rubick,int,Ranged,550
+86,Sand King,all,Melee,150
+87,Shadow Demon,int,Ranged,500
+88,Shadow Fiend,agi,Ranged,525
+89,Shadow Shaman,int,Ranged,400
+90,Silencer,int,Ranged,600
+91,Skywrath Mage,int,Ranged,625
+92,Slardar,str,Melee,150
+93,Slark,agi,Melee,150
+94,Snapfire,all,Ranged,500
+95,Sniper,agi,Ranged,550
+96,Spectre,agi,Melee,150
+97,Spirit Breaker,str,Melee,150
+98,Storm Spirit,int,Ranged,480
+99,Sven,str,Melee,150
+100,Techies,all,Ranged,700
+101,Templar Assassin,agi,Ranged,200
+102,Terrorblade,agi,Melee,150
+103,Tidehunter,str,Melee,150
+104,Timbersaw,all,Melee,150
+105,Tinker,int,Ranged,500
+106,Tiny,str,Melee,150
+107,Treant Protector,str,Melee,150
+108,Troll Warlord,agi,Ranged,500
+109,Tusk,str,Melee,150
+110,Underlord,str,Melee,200
+111,Undying,str,Melee,150
+112,Ursa,agi,Melee,150
+113,Vengeful Spirit,all,Ranged,400
+114,Venomancer,all,Ranged,450
+115,Viper,agi,Ranged,575
+116,Visage,all,Ranged,600
+117,Void Spirit,all,Melee,200
+118,Warlock,int,Ranged,600
+119,Weaver,agi,Ranged,425
+120,Windranger,all,Ranged,600
+121,Winter Wyvern,all,Ranged,425
+122,Witch Doctor,int,Ranged,550
+123,Wraith King,str,Melee,150
+124,Zeus,int,Ranged,380
