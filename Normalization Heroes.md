@@ -43,6 +43,23 @@ $ CREATE TABLE dota.heroes (
     primary_attribute TEXT
 );
 ```
+## Dicionário de dados
+
+hero_id: Identificador único do herói (chave primária).
+Tipo: Inteiro.
+Descrição: Identificador único do herói.
+attack_range: Alcance do ataque do herói.
+Tipo: Inteiro.
+Descrição: A distância máxima em que o herói pode atacar um inimigo.
+attack_type: Tipo de ataque do herói (corpo a corpo ou à distância).
+Tipo: Texto.
+Descrição: Indica se o herói ataca corpo a corpo ou à distância.
+name: Nome do herói.
+Tipo: Texto.
+Descrição: O nome do herói.
+primary_attribute: Atributo primário do herói (força, agilidade ou inteligência).
+Tipo: Texto.
+Descrição: O atributo primário do herói, que influencia seu crescimento de estatísticas e seu papel no jogo.
 
 ## Importar os dados do CSV para a tabela
 

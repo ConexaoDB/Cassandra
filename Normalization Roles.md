@@ -32,6 +32,15 @@ $ CREATE TABLE IF NOT EXISTS role (
     role TEXT
 );
 ```
+## Dicionário de dados
+
+role_id: Identificador único do papel do herói (chave primária).
+Tipo: Inteiro.
+Descrição: Identificador único do papel do herói.
+role: Nome do papel do herói.
+Tipo: Texto.
+Descrição: O nome do papel ou função que o herói desempenha no jogo, como "Carry", "Support", "Offlaner", etc.
+
 
 ## Copy o CSV para a tabela
 ```
