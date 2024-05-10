@@ -1,6 +1,4 @@
-# Apresentação
-
-Nesta apresentação, vamos abordar a importação de dados de heróis de Dota 2 para o Docker e o Cassandra.
+# Nesta apresentação, vamos abordar a importação de dados de heróis de Dota 2 para o Docker e o Cassandra.
 
 ## Passos para Importação de Dados
 
@@ -24,21 +22,30 @@ combined_df.to_csv('heroes.csv', index=False)
 ```
 
 ## Copiar o arquivo CSV para o container do Docker
+```
 $ docker cp herois.csv conexaodb:/herois.csv
+```
 
 ## Entrar no container do Docker e usar o keyspace
+```
 $ docker exec -it conexaodb cqlsh
 
 $ USE dota;
+```
 
 ## Criar a tabela no Cassandra
-CREATE TABLE dota.heroes (
+```
+$ CREATE TABLE dota.heroes (
     hero_id INT PRIMARY KEY,
     attack_range INT,
     attack_type TEXT,
     name TEXT,
     primary_attribute TEXT
 );
+```
 
 ## Importar os dados do CSV para a tabela
+
+```
 $ COPY dota.heroes (hero_id, name, primary_attribute, attack_type, attack_range) FROM 'herois.csv' WITH DELIMITER=',' AND HEADER=TRUE;
+```

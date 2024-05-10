@@ -17,11 +17,12 @@ Salvamos o DataFrame selected_df no arquivo 'hero_id_roles.csv'
 ```
 
 ## Copiar CSV para dentro do docker do cassandra
-
+```
 $ docker cp /home/hitallo/faculdade/terca/filipe/CSV/hero_id_roles.csv conexaodb:/hero_id_roles.csv
+```
 
 ## Entra no cqlsh para criar tabela:
-
+```
 $ docker exec -it conexaodb cqlsh
 
 $ USE dota;
@@ -30,7 +31,9 @@ $ CREATE TABLE IF NOT EXISTS role (
     role_id INT PRIMARY KEY,
     role TEXT
 );
+```
 
 ## Copy o CSV para a tabela
-
+```
 $ COPY roles (hero_id, roles) FROM '/hero_id_roles.csv' WITH DELIMITER=',' AND HEADER=TRUE;
+```
