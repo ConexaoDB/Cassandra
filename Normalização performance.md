@@ -1,5 +1,5 @@
 
-## Normalização Min-Max: Também conhecida como escala min-max, essa técnica redimensiona os dados para um intervalo específico (por exemplo, entre 0 e 1). A fórmula básica é:
+## Normalização estatística  Min-Max: Também conhecida como escala min-max, essa técnica redimensiona os dados para um intervalo específico (por exemplo, entre 0 e 1). A fórmula básica é:
 
 ![Fórmula de normalização](/formula_normalizacao.png)
 
@@ -18,6 +18,10 @@ data = {<br/>
     'Win Rate': [33.33, 55.55, 66.66, 75.00]<br/>
 }<br/>
 df = pd.DataFrame(data)
+
+# Remover colunas desnecessárias para a normalização e para adicionar performance_id e hero_id
+cols_remover = ['Primary Attribute','Attack Type','Attack Range','Name', 'Roles']
+df = df.drop(cols_remover, axis=1)
 
 ## Normalização estatística:
 
@@ -58,25 +62,23 @@ $ USE dota;
 # Criar a tabela:
 ## Crie a tabela com as colunas desejadas. Se precisar, adapte o exemplo abaixo ao seu caso.
 
-$ CREATE TABLE IF NOT EXISTS hero_stats (<br/>
-    id int PRIMARY KEY,<br/>
-    attack_range int,<br/>
-    attack_type text,<br/>
-    name text,<br/>
-    niche_hero boolean,<br/>
-    primary_attribute text,<br/>
-    times_banned int,<br/>
-    times_banned_normalized float,<br/>
-    times_picked int,<br/>
-    times_picked_normalized float,<br/>
-    total_pro_wins int,<br/>
-    total_pro_wins_normalized float,<br/>
-    win_rate float,<br/>
-    win_rate_normalized float<br/>
-);
+CREATE TABLE dota.performance (
+    performance_id int PRIMARY KEY,
+    hero_id int,
+    niche_hero boolean,
+    times_banned int,
+    times_banned_normalized float,
+    times_picked int,
+    times_picked_normalized float,
+    total_pro_wins int,
+    total_pro_wins_normalized float,
+    win_rate float,
+    win_rate_normalized float
+) 
+
 
 # Importar os dados do CSV para a tabela:
 ## Com a tabela criada, você pode importar os dados do arquivo CSV usando o comando COPY.
 
-$ COPY hero_stats (id, Name, Primary_Attribute, Attack_Type, Attack_Range, Total_Pro_Wins, Times_Picked, Times_Banned, Win_Rate, Niche_Hero, Total_Pro_Wins_Normalized, Times_Picked_Normalized, Times_Banned_Normalized, Win_Rate_Normalized) FROM '/herostats.csv' WITH DELIMITER=',' AND HEADER=TRUE;
+$ COPY hero_performance (id, Name, Primary_Attribute, Attack_Type, Attack_Range, Total_Pro_Wins, Times_Picked, Times_Banned, Win_Rate, Niche_Hero, Total_Pro_Wins_Normalized, Times_Picked_Normalized, Times_Banned_Normalized, Win_Rate_Normalized) FROM '/performance.csv' WITH DELIMITER=',' AND HEADER=TRUE;
 

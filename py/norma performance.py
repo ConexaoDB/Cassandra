@@ -22,5 +22,5 @@ df['performance_id'] = range(1, len(df) + 1)
 df['hero_id'] = range(1, len(df) + 1)
 
 # Salvar o DataFrame normalizado
-pro_meta = './pro_meta.csv'
+pro_meta = './performance.csv'
 df.to_csv(pro_meta, index=False)

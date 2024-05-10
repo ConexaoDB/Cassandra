@@ -1,36 +1,43 @@
+# Apresentação
 
-copiad para docker
+Nesta apresentação, vamos abordar a importação de dados de heróis de Dota 2 para o Docker e o Cassandra.
 
-docker cp herois.csv conexaodb:/herois.csv
+## Passos para Importação de Dados
 
-criar tabela:
+### Carregar os CSVs para DataFrames
+
+```python
+import pandas as pd
+
+# Carregar os CSVs para DataFrames
+hero_stats_df = pd.read_csv('Current_Pro_meta.csv')
+heroes_df = pd.read_csv('All_Heroes_ID.csv')
+
+# Extrair as colunas 'Name' e 'Hero ID' e salvar em um único arquivo CSV
+combined_df = pd.DataFrame({
+    'Name': hero_stats_df['Name'],
+    'Hero ID': heroes_df['Hero ID']
+})
+
+# Salvando em um CSV
+combined_df.to_csv('heroes.csv', index=False)
+
+## Copiar o arquivo CSV para o container do Docker
+$ docker cp herois.csv conexaodb:/herois.csv
+
+## Entrar no container do Docker e usar o keyspace
+$ docker exec -it conexaodb cqlsh
+
+$ USE dota;
+
+## Criar a tabela no Cassandra
 CREATE TABLE dota.heroes (
     hero_id INT PRIMARY KEY,
     attack_range INT,
     attack_type TEXT,
     name TEXT,
     primary_attribute TEXT
-) WITH additional_write_policy = '99p'
-    AND bloom_filter_fp_chance = 0.01
-    AND caching = {'keys': 'ALL', 'rows_per_partition': 'NONE'}
-    AND cdc = false
-    AND comment = ''
-    AND compaction = {'class': 'org.apache.cassandra.db.compaction.SizeTieredCompactionStrategy', 'max_threshold': '32', 'min_threshold': '4'}
-    AND compression = {'chunk_length_in_kb': '16', 'class': 'org.apache.cassandra.io.compress.LZ4Compressor'}
-    AND memtable = 'default'
-    AND crc_check_chance = 1.0
-    AND default_time_to_live = 0
-    AND extensions = {}
-    AND gc_grace_seconds = 864000
-    AND max_index_interval = 2048
-    AND memtable_flush_period_in_ms = 0
-    AND min_index_interval = 128
-    AND read_repair = 'BLOCKING'
-    AND speculative_retry = '99p';
+);
 
-
-
-comando de copy:
-
-COPY dota.heroes (hero_id, name, primary_attribute, attack_type, attack_range) FROM 'herois1.csv' WITH DELIMITER=',' AND HEADER=TRUE;
-
+## Importar os dados do CSV para a tabela
+$ COPY dota.heroes (hero_id, name, primary_attribute, attack_type, attack_range) FROM 'herois.csv' WITH DELIMITER=',' AND HEADER=TRUE;
