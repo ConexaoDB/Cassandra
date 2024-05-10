@@ -37,6 +37,7 @@ $ CREATE TABLE IF NOT EXISTS role (
 role_id: Identificador único do papel do herói (chave primária).<br/>
 Tipo: Inteiro.<br/>
 Descrição: Identificador único do papel do herói.<br/>
+
 role: Nome do papel do herói.<br/>
 Tipo: Texto.<br/>
 Descrição: O nome do papel ou função que o herói desempenha no jogo, como "Carry", "Support", "Offlaner", etc.<br/>

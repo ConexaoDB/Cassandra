@@ -48,15 +48,19 @@ $ CREATE TABLE dota.heroes (
 hero_id: Identificador único do herói (chave primária).<br/>
 Tipo: Inteiro.<br/>
 Descrição: Identificador único do herói.<br/>
+
 attack_range: Alcance do ataque do herói.<br/>
 Tipo: Inteiro.<br/>
 Descrição: A distância máxima em que o herói pode atacar um inimigo.<br/>
+
 attack_type: Tipo de ataque do herói (corpo a corpo ou à distância).<br/>
 Tipo: Texto.<br/>
 Descrição: Indica se o herói ataca corpo a corpo ou à distância.<br/>
+
 name: Nome do herói.<br/>
 Tipo: Texto.<br/>
 Descrição: O nome do herói.<br/>
+
 primary_attribute: Atributo primário do herói (força, agilidade ou inteligência).<br/>
 Tipo: Texto.<br/>
 Descrição: O atributo primário do herói, que influencia seu crescimento de estatísticas e seu papel no jogo.<br/>
