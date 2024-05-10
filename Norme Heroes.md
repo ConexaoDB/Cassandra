@@ -21,6 +21,7 @@ combined_df = pd.DataFrame({
 
 # Salvando em um CSV
 combined_df.to_csv('heroes.csv', index=False)
+```
 
 ## Copiar o arquivo CSV para o container do Docker
 $ docker cp herois.csv conexaodb:/herois.csv
