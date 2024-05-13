@@ -9,7 +9,7 @@ Este README fornece instruções sobre como configurar um ambiente Cassandra usa
 
 ## Passo a Passo
 
-### 1. Baixar a imagem do Cassandra
+### 1. Baixar a Imagem do Cassandra
 
 Para baixar a imagem oficial do Cassandra do Docker Hub, execute o seguinte comando no terminal:
 
