@@ -79,7 +79,7 @@ CREATE TABLE dota.performance (
 );
 
  ```
-## Dicionário de dados
+## Dicionario de Desempenho dos Heróis (performance)
 
 - **performance_id** (INT):
   - Identificador único do desempenho (chave primária).
