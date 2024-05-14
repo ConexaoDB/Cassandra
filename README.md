@@ -31,7 +31,7 @@ Substitua <caminho do arquivo> pelo caminho onde seu arquivo CSV está localizad
 ```
 $ docker cp <caminho do arquivo>/all_heroes.csv conexaodbpg:/var/lib/postgresql/data/all_heroes.csv
 ```
-### - Estatísticas dos Heróis:
+- Estatísticas dos Heróis:
 ```
 $ docker cp <caminho do arquivo>/stats_heroes.csv conexaodbpg:/var/lib/postgresql/data/stats_heroes.csv
 ```
