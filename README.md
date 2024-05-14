@@ -79,7 +79,7 @@ CREATE TABLE hero (
     hero_id INT
 );
 ```
-## Fazer import dos csv para dentro das tabelas
+## Fazer import do CSV para dentro das tabelas
 
 ### Importar dados para a tabela hero_stats:
 ```
