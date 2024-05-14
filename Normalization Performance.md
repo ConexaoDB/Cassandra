@@ -1,4 +1,4 @@
-# Nesta apresentação, vamos abordar a importação de dados de heróis de Dota 2 para o Docker e o Cassandra.
+# Nesta apresentação, vamos abordar a importação de dados de Performance de Dota 2 para o Docker e o Cassandra.
 
 ## Passos para Importação de Dados
 
@@ -24,6 +24,12 @@ for col in col_normalizar:
     if col in df.columns:
         df[col + ' normalized'] = (df[col] - df[col].min()) / (df[col].max() - df[col].min())
 
+
+```
+
+
+
+```python
 # Adicionar uma coluna 'performance_id' com valores sequenciais começando em 1
 df['performance_id'] = range(1, len(df) + 1)
 
