@@ -1,3 +1,5 @@
+# Nesta apresentação, vamos abordar a importação de dados de heróis de Dota 2 para o Docker e o Cassandra.
+## Passos para Importação de Dados
 ## Para a criação da nova tabela vamos usar pandas
 
 ```python
