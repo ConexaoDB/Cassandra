@@ -10,14 +10,14 @@ Este guia fornece instruções simples sobre como configurar um ambiente Postgre
 ## Passo a Passo
 
 ### 1. Baixar a Imagem do PostgreSQL
-
+```
 $ docker pull postgres
-
+```
 
 ### 2. Iniciar o Container do PostgreSQL
-
+```
 $ docker run --name conexaodbpg -e POSTGRES_PASSWORD=123 -d -p 5432:5432 postgres
-
+```
 
 ### 3. Preparação dos Dados
 
@@ -31,38 +31,32 @@ Substitua <caminho do arquivo> pelo caminho onde seu arquivo CSV está localizad
 
 $ docker cp <caminho do arquivo>/all_heroes.csv conexaodbpg:/var/lib/postgresql/data/all_heroes.csv
 
-csharp
-Copiar código
-
-- Estatísticas dos Heróis:
-
+### - Estatísticas dos Heróis:
+```
 $ docker cp <caminho do arquivo>/stats_heroes.csv conexaodbpg:/var/lib/postgresql/data/stats_heroes.csv
-
-bash
-Copiar código
-
+```
 ### 5. Acessar o PostgreSQL via PSQL
 
 Para acessar o shell do PostgreSQL dentro do container, utilize:
-
+```
 $ docker exec -it conexaodbpg psql -U postgres
-
+```
 
 ### 6. Criar o Banco de Dados
 
 Dentro do PSQL, crie um banco de dados chamado dota:
-
+```
 $ CREATE DATABASE dota;
-
+```
 ### 7. Conectar ao Banco de Dados
-
+```
 $ \c dota;
-
+```
 ## Criar tabelas
 
 
 ### Tabela Hero Stats
-
+```
 CREATE TABLE hero_stats (
     name TEXT,
     primary_attribute TEXT,
@@ -75,30 +69,33 @@ CREATE TABLE hero_stats (
     win_rate FLOAT,
     niche_hero BOOLEAN
 );
-
+```
 
 ### Tabela Hero
-
+```
 CREATE TABLE hero (
     index SERIAL PRIMARY KEY,
     name TEXT,
     hero_id INT
 );
-
+```
 ## Fazer import dos csv para dentro das tabelas
 
 ### Importar dados para a tabela hero_stats:
-
+```
 COPY hero_stats(name, primary_attribute, attack_type, attack_range, roles, total_pro_wins, times_picked, times_banned, win_rate, niche_hero)
 FROM '/var/lib/postgresql/data/stats_heroes.csv'
 DELIMITER ','
 CSV HEADER;
-
+```
 
 ### Importar dados para a tabela hero
 
-
+```
 COPY hero(name, hero_id)
 FROM '/var/lib/postgresql/data/all_heroes.csv'
 DELIMITER ','
 CSV HEADER;
+```
+
+```
