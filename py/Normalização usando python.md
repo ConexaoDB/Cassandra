@@ -69,4 +69,4 @@ df_merged.to_csv(pro_meta_com_hero_id, index=False)
 
 ```
 
-###`Salvamento do CSV:` Salvamos o DataFrame mesclado e normalizado em um novo arquivo CSV chamado performance_com_hero_id.csv.
+### `Salvamento do CSV:` Salvamos o DataFrame mesclado e normalizado em um novo arquivo CSV chamado performance_com_hero_id.csv.
