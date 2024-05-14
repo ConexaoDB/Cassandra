@@ -24,3 +24,11 @@ $ docker run --name conexaodbpg -e POSTGRES_PASSWORD=123 -d -p 5432:5432 postgre
 Certifique-se de que os dados estão no formato CSV e que a estrutura (nomes de colunas, tipos de dados) é conhecida.
 
 ### 4. Copiar o Dataset para o Container
+
+Substitua <caminho do arquivo> pelo caminho onde seu arquivo CSV está localizado.
+
+- Todos os Heróis:
+
+$ docker cp <caminho do arquivo>/all_heroes.csv conexaodbpg:/var/lib/postgresql/data/all_heroes.csv
+
+csharp
