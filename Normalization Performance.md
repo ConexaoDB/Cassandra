@@ -26,7 +26,7 @@ for col in col_normalizar:
 
 
 ```
-
+![Gráfico de Performance dos Heróis](formula_normalizacao.png)
 
 
 ```python
