@@ -28,9 +28,9 @@ Certifique-se de que os dados estão no formato CSV e que a estrutura (nomes de 
 Substitua <caminho do arquivo> pelo caminho onde seu arquivo CSV está localizado.
 
 - Todos os Heróis:
-
+```
 $ docker cp <caminho do arquivo>/all_heroes.csv conexaodbpg:/var/lib/postgresql/data/all_heroes.csv
-
+```
 ### - Estatísticas dos Heróis:
 ```
 $ docker cp <caminho do arquivo>/stats_heroes.csv conexaodbpg:/var/lib/postgresql/data/stats_heroes.csv
