@@ -95,7 +95,7 @@ $ CREATE TABLE dota.heroes (
 
 ## Importar os dados do CSV para a tabela
 
-
+```
 $ COPY dota.heroes (hero_id, name, primary_attribute, attack_type, attack_range) FROM 'herois.csv' WITH DELIMITER=',' AND HEADER=TRUE;
 
 ```
