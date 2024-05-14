@@ -77,7 +77,6 @@ CREATE TABLE hero_stats (
 );
 
 
-
 ## Tabela Hero
 
 CREATE TABLE hero (
@@ -85,3 +84,21 @@ CREATE TABLE hero (
     name TEXT,
     hero_id INT
 );
+
+## Fazer import dos csv para dentro das tabelas
+
+### Importar dados para a tabela hero_stats:
+
+COPY hero_stats(name, primary_attribute, attack_type, attack_range, roles, total_pro_wins, times_picked, times_banned, win_rate, niche_hero)
+FROM '/var/lib/postgresql/data/stats_heroes.csv'
+DELIMITER ','
+CSV HEADER;
+
+
+### Importa dados para a tabela hero
+
+
+COPY hero(name, hero_id)
+FROM '/var/lib/postgresql/data/all_heroes.csv'
+DELIMITER ','
+CSV HEADER;
