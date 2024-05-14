@@ -32,3 +32,25 @@ Substitua <caminho do arquivo> pelo caminho onde seu arquivo CSV está localizad
 $ docker cp <caminho do arquivo>/all_heroes.csv conexaodbpg:/var/lib/postgresql/data/all_heroes.csv
 
 csharp
+Copiar código
+
+- Estatísticas dos Heróis:
+
+$ docker cp <caminho do arquivo>/stats_heroes.csv conexaodbpg:/var/lib/postgresql/data/stats_heroes.csv
+
+bash
+Copiar código
+
+### 5. Acessar o PostgreSQL via PSQL
+
+Para acessar o shell do PostgreSQL dentro do container, utilize:
+
+$ docker exec -it conexaodbpg psql -U postgres
+
+
+### 6. Criar o Banco de Dados
+
+Dentro do PSQL, crie um banco de dados chamado dota:
+
+
+$ CREATE DATABASE dota;
