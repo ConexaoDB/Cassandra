@@ -1,4 +1,7 @@
 
+### `Pandas:` Estamos utilizando a biblioteca pandas, que é fundamental para a manipulação de dados em Python.
+
+### `Leitura dos CSVs:` Carregamos os arquivos Current_Pro_meta.csv e All_Heroes_ID.csv para DataFrames df_pro_meta e df_heroes_id, respectivamente, facilitando a manipulação dos dados.
 ## Importação do Pandas e Carregamento do CSV
 ```python
 import pandas as pd
@@ -13,9 +16,6 @@ df_heroes_id = pd.read_csv(all_hero_id)
 
 ```
 
-### `Pandas:` Estamos utilizando a biblioteca pandas, que é fundamental para a manipulação de dados em Python.
-
-### `Leitura dos CSVs:` Carregamos os arquivos Current_Pro_meta.csv e All_Heroes_ID.csv para DataFrames df_pro_meta e df_heroes_id, respectivamente, facilitando a manipulação dos dados.
 
 ## Remoção de Colunas Desnecessárias
 ```python
