@@ -52,5 +52,36 @@ $ docker exec -it conexaodbpg psql -U postgres
 
 Dentro do PSQL, crie um banco de dados chamado dota:
 
-
 $ CREATE DATABASE dota;
+
+### 7. Conectar ao Banco de Dados
+
+$ \c dota;
+
+## Criar tabelas
+
+
+### Tabela Hero Stats
+
+CREATE TABLE hero_stats (
+    name TEXT,
+    primary_attribute TEXT,
+    attack_type TEXT,
+    attack_range INT,
+    roles TEXT,
+    total_pro_wins INT,
+    times_picked INT,
+    times_banned INT,
+    win_rate FLOAT,
+    niche_hero BOOLEAN
+);
+
+
+
+## Tabela Hero
+
+CREATE TABLE hero (
+    index SERIAL PRIMARY KEY,
+    name TEXT,
+    hero_id INT
+);
