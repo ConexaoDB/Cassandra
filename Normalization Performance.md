@@ -79,32 +79,63 @@ CREATE TABLE dota.performance (
 );
 
  ```
+## Tabela de Desempenho dos Heróis (performance)
 
- ### Dicionário de dados
+- **performance_id** (INT):
+  - Identificador único do desempenho (chave primária).
+  - Tipo: Inteiro
 
 - **hero_id** (INT):
-  - Identificador único do herói (chave primária).
+  - Identificador único do herói.
   - Tipo: Inteiro
+  - Descrição: Chave estrangeira que referencia o `hero_id` na tabela `dota.heroes`.
 
-- **attack_range** (INT):
-  - Alcance do ataque do herói.
+- **niche_hero** (BOOLEAN):
+  - Indica se o herói é considerado de nicho.
+  - Tipo: Booleano
+  - Descrição: `True` se o herói é considerado de nicho, `False` caso contrário.
+
+- **times_banned** (INT):
+  - Número de vezes que o herói foi banido.
   - Tipo: Inteiro
-  - Descrição: A distância máxima em que o herói pode atacar um inimigo.
+  - Descrição: O número total de vezes que o herói foi banido em jogos profissionais.
 
-- **attack_type** (TEXT):
-  - Tipo de ataque do herói (corpo a corpo ou à distância).
-  - Tipo: Texto
-  - Descrição: Indica se o herói ataca corpo a corpo ou à distância.
+- **times_banned_normalized** (FLOAT):
+  - Número de vezes que o herói foi banido, normalizado.
+  - Tipo: Ponto Flutuante
+  - Descrição: O número de vezes que o herói foi banido, ajustado por algum fator de normalização.
 
-- **name** (TEXT):
-  - Nome do herói.
-  - Tipo: Texto
-  - Descrição: O nome do herói.
+- **times_picked** (INT):
+  - Número de vezes que o herói foi escolhido.
+  - Tipo: Inteiro
+  - Descrição: O número total de vezes que o herói foi escolhido em jogos profissionais.
 
-- **primary_attribute** (TEXT):
-  - Atributo primário do herói (força, agilidade ou inteligência).
-  - Tipo: Texto
-  - Descrição: O atributo primário do herói, que influencia seu crescimento de estatísticas e seu papel no jogo.
+- **times_picked_normalized** (FLOAT):
+  - Número de vezes que o herói foi escolhido, normalizado.
+  - Tipo: Ponto Flutuante
+  - Descrição: O número de vezes que o herói foi escolhido, ajustado por algum fator de normalização.
+
+- **total_pro_wins** (INT):
+  - Número total de vitórias do herói em jogos profissionais.
+  - Tipo: Inteiro
+  - Descrição: O número total de vitórias do herói em jogos profissionais.
+
+- **total_pro_wins_normalized** (FLOAT):
+  - Número total de vitórias do herói em jogos profissionais, normalizado.
+  - Tipo: Ponto Flutuante
+  - Descrição: O número total de vitórias do herói, ajustado por algum fator de normalização.
+
+- **win_rate** (FLOAT):
+  - Taxa de vitória do herói.
+  - Tipo: Ponto Flutuante
+  - Descrição: A porcentagem de vitórias do herói em relação ao número total de jogos em que foi escolhido.
+
+- **win_rate_normalized** (FLOAT):
+  - Taxa de vitória do herói, normalizada.
+  - Tipo: Ponto Flutuante
+  - Descrição: A taxa de vitória do herói, ajustada por algum fator de normalização.
+
+
 
 ## Importar os dados do CSV para a tabela
 
