@@ -2,12 +2,13 @@
 
 ## Passos para Importação de Dados
 
-### Carregar os CSVs para DataFrames
+### Usando a biblioteca pandas
+```
 
 python
 import pandas as pd
-
-# Carregar os CSVs para DataFrames
+```
+# Carregar os CSVs para DataFrames 
 hero_stats_df = pd.read_csv('Current_Pro_meta.csv')
 heroes_df = pd.read_csv('All_Heroes_ID.csv')
 
@@ -39,11 +40,11 @@ $ USE dota;
 ## Criar a tabela no Cassandra
 
 $ CREATE TABLE dota.heroes (
-    hero_id INT PRIMARY KEY,
-    attack_range INT,
-    attack_type TEXT,
-    name TEXT,
-    primary_attribute TEXT
+    hero_id INT PRIMARY KEY,<br/>
+    attack_range INT,<br/>
+    attack_type TEXT,<br/>
+    name TEXT,<br/>
+    primary_attribute TEXT<br/>
 );
  
 
