@@ -77,7 +77,7 @@ CREATE TABLE hero_stats (
 );
 
 
-## Tabela Hero
+### Tabela Hero
 
 CREATE TABLE hero (
     index SERIAL PRIMARY KEY,
@@ -95,7 +95,7 @@ DELIMITER ','
 CSV HEADER;
 
 
-### Importa dados para a tabela hero
+### Importar dados para a tabela hero
 
 
 COPY hero(name, hero_id)
