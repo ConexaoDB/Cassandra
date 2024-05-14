@@ -6,12 +6,15 @@
 ```python
 import pandas as pd
 
-# Carregar o CSV para um DataFrame
-caminho_para_csv = '../Current_Pro_meta.csv'
-df = pd.read_csv(caminho_para_csv)
+# Carregar os CSVs para DataFrames
+hero_stats_df = '../Current_Pro_meta.csv'
+heroes_df = '../All_Heroes_ID.csv'
+
+# Carregar o CSV 'Current_Pro_meta.csv' para um DataFrame
+df = pd.read_csv(hero_stats_df)
 
 # Remover colunas desnecessárias para a normalização e para adicionar performance_id e hero_id
-cols_remover = ['Primary Attribute','Attack Type','Attack Range','Name', 'Roles']
+cols_remover = ['Primary Attribute', 'Attack Type', 'Attack Range', 'Name', 'Roles']
 df = df.drop(cols_remover, axis=1)
 
 # Normalização estatística das colunas
@@ -24,12 +27,22 @@ for col in col_normalizar:
 # Adicionar uma coluna 'performance_id' com valores sequenciais começando em 1
 df['performance_id'] = range(1, len(df) + 1)
 
-# Adicionar uma coluna 'hero_id' com valores fictícios para ilustrar como seria adicionado
-df['hero_id'] = range(1, len(df) + 1)
+# Carregar o CSV 'All_Heroes_ID.csv' para obter o hero_id
+heroes_df = pd.read_csv(heroes_df)
 
-# Salvar o DataFrame normalizado
+# Verificar as colunas disponíveis no DataFrame heroes_df
+print(heroes_df.columns)
+
+# Assumindo que há uma coluna comum, por exemplo, 'Hero ID' para a junção
+# Mesclar os DataFrames para adicionar o hero_id
+df = df.merge(heroes_df[['Hero ID', 'hero_id']], on='Hero ID', how='left')
+
+# Salvar o DataFrame final em um arquivo CSV
 pro_meta = './performance.csv'
 df.to_csv(pro_meta, index=False)
+
+print("Arquivo 'performance.csv' salvo com sucesso!")
+
 ```
 
 
