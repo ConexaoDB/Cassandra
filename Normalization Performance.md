@@ -63,13 +63,21 @@ $ USE dota;
 
 ## Criar a tabela no Cassandra
 ``` 
-$ CREATE TABLE dota.heroes (
-    hero_id INT PRIMARY KEY,<br/>
-    attack_range INT,<br/>
-    attack_type TEXT,<br/>
-    name TEXT,<br/>
-    primary_attribute TEXT<br/>
+CREATE TABLE dota.performance (
+    performance_id int PRIMARY KEY,
+    hero_id int,
+    niche_hero boolean,
+    times_banned int,
+    times_banned_normalized float,
+    times_picked int,
+    times_picked_normalized float,
+    total_pro_wins int,
+    total_pro_wins_normalized float,
+    win_rate float,
+    win_rate_normalized float,
+    FOREIGN KEY (hero_id) REFERENCES dota.heroes(hero_id)
 );
+
  ```
 
  ### Dicionário de dados
@@ -97,7 +105,6 @@ $ CREATE TABLE dota.heroes (
   - Atributo primário do herói (força, agilidade ou inteligência).
   - Tipo: Texto
   - Descrição: O atributo primário do herói, que influencia seu crescimento de estatísticas e seu papel no jogo.
-
 
 ## Importar os dados do CSV para a tabela
 
