@@ -48,15 +48,15 @@ print("Arquivo 'performance.csv' salvo com sucesso!")
 
 ## Entrar no container do Docker e usar o keyspace
 
-
+```
 $ docker exec -it conexaodb cqlsh
 
 $ USE dota;
 
-
+```
 
 ## Criar a tabela no Cassandra
-
+``` 
 $ CREATE TABLE dota.heroes (
     hero_id INT PRIMARY KEY,<br/>
     attack_range INT,<br/>
@@ -64,7 +64,7 @@ $ CREATE TABLE dota.heroes (
     name TEXT,<br/>
     primary_attribute TEXT<br/>
 );
- 
+ ```
 
  ### Dicionário de dados
 
